@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>markrecording sheet</title>
+
+    <style>
+        .body {
+            
+            background-image: url("https://images.unsplash.com/photo-1576165015454-8131a3c20812?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            text-align: center;
+            color:white;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <h1>STUDENTS MARK RECORDING SHEET</h1>
+
+    <div>
+            MATHS <input value="maths" type="number" id="maths">
+            ENGLISH<input value="english" type="number" id="english">
+            SCIENCE<input value="science" type="number" id="science">
+            GEOGRAPHY<input value="geography" type="number" id="geography">
+
+        <p> <button onclick="submit()">submit</button></p>
+
+        <h1 id="sum">SUM</h1>
+        <h2 id="avg"> AVERAGE OF MARKS</h2>
+        <h1 id="statistics">status</h1>
+    </div>
+
+    <script>
+
+        function submit() {
+            var math1 = document.getElementById("maths").value;
+            var eng1 = document.getElementById("english").value;
+            var sci = document.getElementById("science").value;
+            var geo = document.getElementById("geography").value;
+
+            sum = parseInt(math1) + parseInt(eng1) + parseInt(sci) + parseInt(geo);
+            //alert(sum)
+            document.getElementById("sum").innerHTML = sum
+            var avg = sum / 4;
+            document.getElementById("avg").innerHTML = avg
+            if (avg > 50) {
+                document.getElementById("statistics").innerHTML = "above average"
+            }
+            else if (avg < 50) {
+                document.getElementById("statistics").innerHTML = "below average"
+            }
+            else
+                document.getElementById("statistics").innerHTML = " average"
+
+        }
+    </script>
+
+
+</body>
+
+</html>
